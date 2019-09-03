@@ -41,11 +41,11 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
             />
 
             <div>
-                <button type="submit" disabled={submitting} className="btn btn-primary"><i className="fa fa-paper-plane-o" aria-hidden="true" /> Submit</button>
+                <button type="submit" disabled={submitting} className="btn btn-primary">Salvar</button>
 
-                {heading === 'Add' && <button type="button" disabled={pristine || submitting} onClick={reset} className="btn btn-default btn-space">Clear Values</button>}
+                {heading === 'Novo' && <button type="button" disabled={pristine || submitting} onClick={reset} className="btn btn-default btn-space">Limpar</button>}
 
-                <button type="button" className="btn btn-default btn-space" onClick={handleCancel}>Cancel</button>
+                <button type="button" className="btn btn-default btn-space" onClick={handleCancel}>Cancelar</button>
             </div>
         </form>
     );

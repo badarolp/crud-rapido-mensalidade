@@ -82,7 +82,7 @@ export class CourseListContainer extends React.Component {
             <div className="container-fluid">
                 <div className="row mt-3">
                     <div className="col">
-                        <h1>Courses</h1>                        
+                        <h1>Alunos</h1>                        
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@ export class CourseListContainer extends React.Component {
                                 className="btn btn-primary"
                                 onClick={this.handleAddCourse}
                             >
-                                <i className="fa fa-plus" aria-hidden="true"/> New
+                                <i className="fa fa-plus" aria-hidden="true"/> Novo
                             </button>
 
                             <button
@@ -102,7 +102,7 @@ export class CourseListContainer extends React.Component {
                                 className="btn btn-warning ml-2"
                                 onClick={this.handleEditCourse}                                
                             >
-                                <i className="fa fa-pencil" aria-hidden="true"/> Edit
+                                <i className="fa fa-pencil" aria-hidden="true"/> Editar
                             </button>                                
 
                             <button
@@ -110,7 +110,7 @@ export class CourseListContainer extends React.Component {
                                 className="btn btn-danger ml-2"
                                 onClick={this.handleDelete}
                             >
-                                <i className="fa fa-trash-o" aria-hidden="true" onClick={this.handleDelete}/> Delete
+                                <i className="fa fa-trash-o" aria-hidden="true" onClick={this.handleDelete}/> Remover
                             </button>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ export class AddOrEditCourseContainer extends React.Component {
 
     render() {
         const { initialValues } = this.props;
-        const heading = initialValues && initialValues.id ? 'Edit' : 'Add';
+        const heading = initialValues && initialValues.id ? 'Editar' : 'Novo';
 
         return (
             <div className="container">
