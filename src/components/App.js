@@ -23,10 +23,10 @@ const App = () => {
 
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/courses" component={CourseListContainer} />
-                        <Route exact path="/course" component={AddOrEditCourseContainer} />
-                        <Route path="/course/:id" component={AddOrEditCourseContainer} />
-                        <Route path="/about" component={About} />
+                        <Route path="/alunos" component={CourseListContainer} />
+                        <Route exact path="/aluno" component={AddOrEditCourseContainer} />
+                        <Route path="/aluno/:id" component={AddOrEditCourseContainer} />
+                        <Route path="/login" component={About} />
                         <Route component={PageNotFound} />
                     </Switch>
 

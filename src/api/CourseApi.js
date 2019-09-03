@@ -52,35 +52,6 @@ class CourseApi {
                         console.log(error);
                     });
             }, delay);
-        });        
-        
-        
-        /*
-        api.get("/alunos")
-            .then(response => {
-                courses = response.data.alunos;
-                console.log(courses);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        */
-        /*
-        api.get("/alunos")
-            .then(response => {
-                this.setState({
-                    courses: response.data.alunos
-                })
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        */
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(Object.assign([], courses));
-                console.log(courses);
-            }, delay);
         });
     }
 
@@ -89,11 +60,10 @@ class CourseApi {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 // Simulate server-side validation
-                const minCourseTitleLength = 1;
-                if (course.title.length < minCourseTitleLength) {
-                    reject(`Title must be at least ${minCourseTitleLength} characters.`);
+                const tamanhoMinimoNome = 2;
+                if (course.nome.length < tamanhoMinimoNome) {
+                    reject(`Nome com no mínimo ${tamanhoMinimoNome} caracteres.`);
                 }
-
                 if (course.id) {
                     const existingCourseIndex = courses.findIndex(a => a.id === course.id);
                     courses.splice(existingCourseIndex, 1, course);
@@ -101,11 +71,17 @@ class CourseApi {
                     //Just simulating creation here.
                     //The server would generate ids and watchHref's for new courses in a real app.
                     //Cloning so copy returned is passed by value rather than by reference.
-                    course.id = generateId(course);
-                    course.watchHref = `http://www.pluralsight.com/courses/${course.id}`;
-                    courses.push(course);
+                    
+                    // course.id = generateId(course);
+                    // course.watchHref = `http://www.pluralsight.com/courses/${course.id}`;
+                    // courses.push(course);
+                    setTimeout(() => {
+                        api.post("/alunos", course)
+                            .catch(error => {
+                                console.log(error);
+                            });
+                    }, delay);
                 }
-
                 resolve(course);
             }, delay);
         });

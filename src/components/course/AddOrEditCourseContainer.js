@@ -31,22 +31,17 @@ export class AddOrEditCourseContainer extends React.Component {
             });
     }
 
-
-
     handleSave(values) {
         const course = {
             id: values.id,
-            title: values.title,
-            watchHref: values.watchHref,
-            authorId: values.authorId,
-            length: values.length,
-            category: values.category
+            nome: values.nome,
+            celular: values.celular
         };
 
         this.props.action.saveCourseAction(course)
             .then(() => {
-                toastr.success('Course saved');
-                this.props.history.push('/courses');
+                toastr.success('Aluno salvo');
+                this.props.history.push('/alunos');
             }).catch(error => {
                 toastr.error(error);
             });
@@ -56,7 +51,7 @@ export class AddOrEditCourseContainer extends React.Component {
 
     handleCancel(event) {
         event.preventDefault();
-        this.props.history.replace('/courses');
+        this.props.history.replace('/alunos');
     }
 
 

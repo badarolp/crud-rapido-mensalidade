@@ -31,7 +31,7 @@ export class CourseListContainer extends React.Component {
 
 
     handleAddCourse() {
-        this.props.history.push('/course');
+        this.props.history.push('/aluno');
     }
 
 
@@ -41,7 +41,7 @@ export class CourseListContainer extends React.Component {
 
         if (selectedCourseId) {
             this.setState({selectedCourseId: undefined});            
-            this.props.history.push(`/course/${selectedCourseId}`);
+            this.props.history.push(`/aluno/${selectedCourseId}`);
         }        
     }
 

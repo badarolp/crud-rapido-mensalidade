@@ -8,38 +8,36 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
     return (
         <form onSubmit={handleSubmit(handleSave)}>
             <h1>{heading}</h1>
-
+            
+            {/*
+            
+            
+            'data_nascimento',
+            'peso',
+            'faixa',
+            'grau',
+            'rg',
+            'cpf',
+            'email',
+            'endereco',
+            'data_ultima_graduacao',
+            'observacoes',
+            'sexo',
+            */}
+    
+    
             <Field
                 type="text"
-                name="title"
-                label="Title"
-                placeholder="Title of the course"
+                name="nome"
+                label="Nome"
                 component={FieldInput}
             />
-
-            <Field
-                name="authorId"
-                label="Author"
-                options={authors}
-                component={SelectInput}
-            />
-
             <Field
                 type="text"
-                name="category"
-                label="Category"
-                placeholder="Category of the course"
+                name="celular"
+                label="Celular"
                 component={FieldInput}
             />
-
-            <Field
-                type="text"
-                name="length"
-                label="Length"
-                placeholder="Lenght of course in minutes or hours"
-                component={FieldInput}
-            />
-
             <div>
                 <button type="submit" disabled={submitting} className="btn btn-primary">Salvar</button>
 
@@ -58,22 +56,13 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
 const validate = values => {
     const errors = {};
 
-    if (!values.title) {
-        errors.title = 'Required';
+    if (!values.nome) {
+        errors.nome = 'Campo obrigatório';
     }
 
-    if (!values.category) {
-        errors.category = 'Required';
+    if (!values.celular) {
+        errors.celular = 'Campo obrigatório';
     }
-
-    if (!values.length) {
-        errors.length = 'Required';
-    }
-
-    if (!values.authorId) {
-        errors.authorId = 'Required';
-    }
-
     return errors;
 };
 
