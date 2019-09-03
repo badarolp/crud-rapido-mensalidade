@@ -5,48 +5,31 @@ import api from "../api";
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
 // All calls return promises.
+const courses = [];
+/*
 const courses = [
     {
-        id: "react-flux-building-applications",
-        title: "Building Applications in React and Flux",
-        watchHref: "http://www.pluralsight.com/courses/react-flux-building-applications",
-        authorId: "cory-house",
-        length: "5:08",
-        category: "JavaScript"
+        id: "1",
+        nome: "Lucas",
+        celular: "(77)98100-5641"
     },
     {
-        id: "clean-code",
-        title: "Clean Code: Writing Code for Humans",
-        watchHref: "http://www.pluralsight.com/courses/writing-clean-code-humans",
-        authorId: "cory-house",
-        length: "3:10",
-        category: "Software Practices"
+        id: "2",
+        nome: "Ricardo",
+        celular: "(77)99999-9999"
     },
     {
-        id: "architecture",
-        title: "Architecting Applications for the Real World",
-        watchHref: "http://www.pluralsight.com/courses/architecting-applications-dotnet",
-        authorId: "cory-house",
-        length: "2:52",
-        category: "Software Architecture"
+        id: "3",
+        nome: "Teste",
+        celular: "(77)88888-8888"
     },
     {
-        id: "career-reboot-for-developer-mind",
-        title: "Becoming an Outlier: Reprogramming the Developer Mind",
-        watchHref: "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
-        authorId: "cory-house",
-        length: "2:30",
-        category: "Career"
-    },
-    {
-        id: "web-components-shadow-dom",
-        title: "Web Component Fundamentals",
-        watchHref: "http://www.pluralsight.com/courses/web-components-shadow-dom",
-        authorId: "cory-house",
-        length: "5:10",
-        category: "HTML5"
-    }
+        id: "4",
+        nome: "João",
+        celular: "(77)98100-0000"
+    },    
 ];
+*/
 
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
@@ -59,6 +42,29 @@ const generateId = (course) => {
 
 class CourseApi {
     static getAllCourses() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                api.get("/alunos")
+                    .then(response => {
+                        resolve(Object.assign([], response.data.alunos));
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            }, delay);
+        });        
+        
+        
+        /*
+        api.get("/alunos")
+            .then(response => {
+                courses = response.data.alunos;
+                console.log(courses);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        */
         /*
         api.get("/alunos")
             .then(response => {
@@ -73,9 +79,9 @@ class CourseApi {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(Object.assign([], courses));
+                console.log(courses);
             }, delay);
         });
-        
     }
 
     static saveCourse(course) {

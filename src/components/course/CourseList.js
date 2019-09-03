@@ -21,14 +21,6 @@ const getCaret = direction => {
     );
 };
 
-
-
-const titleFormatter = (cell, row) => {
-  return `<a href=${row.watchHref} target="_blank">${cell}</a>`;
-};
-
-
-
 class CourseList extends React.Component {
 
     constructor(props) {
@@ -56,46 +48,24 @@ class CourseList extends React.Component {
         return (
             <BootstrapTable data={this.props.courses}  selectRow={this.selectRowProp}  options={this.options} bordered={false} striped hover condensed>
                 <TableHeaderColumn dataField="id" isKey hidden>Id</TableHeaderColumn>
-                
-                <TableHeaderColumn 
-                    dataField="title"
-                    dataFormat={titleFormatter} 
+                <TableHeaderColumn
+                    dataField="nome"
                     dataSort={true}
                     caretRender={getCaret}
-                    filter={{type: 'TextFilter', delay: 0 }}
+                    filter={{ type: 'TextFilter', delay: 0 }}
                     columnTitle
                 >
-                    Title
+                    Nome
                 </TableHeaderColumn>
-
-                <TableHeaderColumn 
-                    dataField="length"
+                <TableHeaderColumn
+                    dataField="celular"
                     dataSort={true}
                     caretRender={getCaret}
-                    columnTitle
+                    columnTitle                    
+                    filter={{ type: 'TextFilter', delay: 0 }}
                 >
-                    Length
+                    Celular
                 </TableHeaderColumn>
-
-                <TableHeaderColumn 
-                    dataField="category"
-                    dataSort={true}
-                    caretRender={getCaret}
-                    filter={{type: 'TextFilter', delay: 0 }}
-                    columnTitle
-                >
-                    Category
-                </TableHeaderColumn>  
-
-                <TableHeaderColumn 
-                    dataField="authorId"
-                    dataSort={true}
-                    caretRender={getCaret}
-                    filter={{type: 'TextFilter', delay: 0 }}
-                    columnTitle
-                >
-                    Author
-                </TableHeaderColumn>                                
             </BootstrapTable>
         );
     }
