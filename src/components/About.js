@@ -1,13 +1,23 @@
 import React from 'react';
 
+import { loginUser } from "../UserContext";
 
 const About = () => {
-  return (
-    <div className="container">
-      <h1>About</h1>
-      <p>Est et amet perfecto sententiae, nec error essent eripuit ei. Velit sanctus ut has, partem dolorem atomorum est ad, sumo fabellas electram ex vim.</p>
-    </div>
-  );
+	return (
+		
+		<div className="container text-muted">
+			<button
+				type="button"
+				onClick={() => loginUser()}
+				variant="contained"
+				color="primary"
+				size="large"
+				className="btn btn-warning ml-12"
+			>
+				Logar
+			</button>
+		</div>
+	);
 };
 
 
