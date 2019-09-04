@@ -12,9 +12,8 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
             {/*
             
             
-            'data_nascimento',
-            'peso',
-            'faixa',
+            
+            
             'grau',
             'rg',
             'cpf',
@@ -36,6 +35,66 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
                 type="text"
                 name="celular"
                 label="Celular"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="data_nascimento"
+                label="Data de Nascimento"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="peso"
+                label="Peso"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="faixa"
+                label="Faixa"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="grau"
+                label="Grau"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="rg"
+                label="RG"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="cpf"
+                label="CPF"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="email"
+                label="email"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="endereco"
+                label="endereco"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="data_ultima_graduacao"
+                label="Data da ultima graduação"
+                component={FieldInput}
+            />
+            <Field
+                type="text"
+                name="observacoes"
+                label="Sexo"
                 component={FieldInput}
             />
             <div>
