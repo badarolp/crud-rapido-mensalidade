@@ -2,7 +2,12 @@ import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import FieldInput from '../common/FieldInput';
 import SelectInput from '../common/SelectInput';
-import InputMask from 'react-input-mask';
+
+import { createTextMask } from 'redux-form-input-masks';
+
+const phoneMask = createTextMask({
+    pattern: '(99) 99999-9999',
+});
 
 export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading, authors, handleSave, handleCancel }) => {
     return (
@@ -19,6 +24,7 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
                 name="celular"
                 label="Celular"
                 component={FieldInput}
+                {...phoneMask}
             />
             <Field
                 type="text"
