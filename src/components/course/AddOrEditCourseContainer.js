@@ -35,7 +35,18 @@ export class AddOrEditCourseContainer extends React.Component {
         const course = {
             id: values.id,
             nome: values.nome,
-            celular: values.celular
+            celular: values.celular,
+            data_nascimento: values.data_nascimento,
+            peso: values.peso,
+            faixa: values.faixa,
+            grau: values.grau,
+            rg: values.rg,
+            cpf: values.cpf,
+            email: values.email,
+            endereco: values.endereco,
+            data_ultima_graduacao: values.data_ultima_graduacao,
+            observacoes: values.observacoes,
+            sexo: values.sexo,
         };
 
         this.props.action.saveCourseAction(course)

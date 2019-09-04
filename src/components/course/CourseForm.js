@@ -2,29 +2,12 @@ import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import FieldInput from '../common/FieldInput';
 import SelectInput from '../common/SelectInput';
-
+import InputMask from 'react-input-mask';
 
 export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading, authors, handleSave, handleCancel }) => {
     return (
         <form onSubmit={handleSubmit(handleSave)}>
             <h1>{heading}</h1>
-            
-            {/*
-            
-            
-            
-            
-            'grau',
-            'rg',
-            'cpf',
-            'email',
-            'endereco',
-            'data_ultima_graduacao',
-            'observacoes',
-            'sexo',
-            */}
-    
-    
             <Field
                 type="text"
                 name="nome"
@@ -37,6 +20,12 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
                 label="Celular"
                 component={FieldInput}
             />
+            <Field
+                type="text"
+                name="sexo"
+                label="Sexo"
+                component={FieldInput}
+            />            
             <Field
                 type="text"
                 name="data_nascimento"
@@ -94,7 +83,7 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
             <Field
                 type="text"
                 name="observacoes"
-                label="Sexo"
+                label="Observações"
                 component={FieldInput}
             />
             <div>
