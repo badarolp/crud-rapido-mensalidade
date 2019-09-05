@@ -5,107 +5,136 @@ import SelectInput from '../common/SelectInput';
 
 import { createTextMask } from 'redux-form-input-masks';
 
+import DatePicker from "react-datepicker";
+import moment from 'moment';
+
 const phoneMask = createTextMask({
     pattern: '(99) 99999-9999',
 });
 
-export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading, authors, handleSave, handleCancel }) => {
-    return (
-        <form onSubmit={handleSubmit(handleSave)}>
-            <h1>{heading}</h1>
-            <Field
-                type="text"
-                name="nome"
-                label="Nome"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="celular"
-                label="Celular"
-                component={FieldInput}
-                {...phoneMask}
-            />
-            <Field
-                type="text"
-                name="sexo"
-                label="Sexo"
-                component={FieldInput}
-            />            
-            <Field
-                type="text"
-                name="data_nascimento"
-                label="Data de Nascimento"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="peso"
-                label="Peso"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="faixa"
-                label="Faixa"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="grau"
-                label="Grau"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="rg"
-                label="RG"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="cpf"
-                label="CPF"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="email"
-                label="email"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="endereco"
-                label="endereco"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="data_ultima_graduacao"
-                label="Data da ultima graduação"
-                component={FieldInput}
-            />
-            <Field
-                type="text"
-                name="observacoes"
-                label="Observações"
-                component={FieldInput}
-            />
-            <div>
-                <button type="submit" disabled={submitting} className="btn btn-primary">Salvar</button>
+class CourseForm extends React.Component {
+    /*
+    constructor(props) {
+        super(props)
+        this.state = {
+            startDate: moment()
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
 
-                {heading === 'Novo' && <button type="button" disabled={pristine || submitting} onClick={reset} className="btn btn-default btn-space">Limpar</button>}
+    handleChange(date) {
+        this.setState({
+            startDate: date
+        });
+    } 
+    */
 
-                <button type="button" className="btn btn-default btn-space" onClick={handleCancel}>Cancelar</button>
-            </div>
-        </form>
-    );
-};
+    render() {
+        const { handleSubmit, pristine, reset, submitting, heading, authors, handleSave, handleCancel } = this.props;
 
+        return (
+            <form onSubmit={handleSubmit(handleSave)}>
+                <h1>{heading}</h1>
+                {/*
+                <DatePicker
+                    selected={this.state.startDate}
+                    onChange={this.handleChange}
+                />
+                */}
+                <Field
+                    type="text"
+                    name="nome"
+                    label="Nome"
+                    component={FieldInput}
+                />
+                <Field
+                    type="text"
+                    name="celular"
+                    label="Celular"
+                    component={FieldInput}
+                    {...phoneMask}
+                />
+                <Field
+                    type="text"
+                    name="sexo"
+                    label="Sexo"
+                    component={FieldInput}
+                />
+                {/*
+                <Field
+                    type="text"
+                    name="data_nascimento"
+                    label="Data de Nascimento"
+                    component={FieldInput}
+                />
+                */}
+                <Field
+                    type="text"
+                    name="peso"
+                    label="Peso"
+                    component={FieldInput}
+                />
+                <Field
+                    type="text"
+                    name="faixa"
+                    label="Faixa"
+                    component={FieldInput}
+                />
+                <Field
+                    type="text"
+                    name="grau"
+                    label="Grau"
+                    component={FieldInput}
+                />
+                <Field
+                    type="text"
+                    name="rg"
+                    label="RG"
+                    component={FieldInput}
+                />
+                <Field
+                    type="text"
+                    name="cpf"
+                    label="CPF"
+                    component={FieldInput}
+                />
+                <Field
+                    type="text"
+                    name="email"
+                    label="email"
+                    component={FieldInput}
+                />
+                <Field
+                    type="text"
+                    name="endereco"
+                    label="endereco"
+                    component={FieldInput}
+                />
+                {/*
+                <Field
+                    type="text"
+                    name="data_ultima_graduacao"
+                    label="Data da ultima graduação"
+                    component={FieldInput}
+                />
+                */}
+                <Field
+                    type="text"
+                    name="observacoes"
+                    label="Observações"
+                    component={FieldInput}
+                />
+                <div>
+                    <button type="submit" disabled={submitting} className="btn btn-primary">Salvar</button>
 
+                    {heading === 'Novo' && <button type="button" disabled={pristine || submitting} onClick={reset} className="btn btn-default btn-space">Limpar</button>}
 
-
+                    <button type="button" className="btn btn-default btn-space" onClick={handleCancel}>Cancelar</button>
+                </div>
+            </form>
+        );        
+    }
+}
 
 const validate = values => {
     const errors = {};
