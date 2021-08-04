@@ -39,7 +39,7 @@
     "redux-form": "^6.8.0",
     "redux-form-input-masks": "^2.0.1",
     "redux-thunk": "^2.2.0",
-    "tar": "^4.4.10",
+    "tar": "^4.4.15",
     "tether": "^1.4.0",
     "toastr": "^2.1.2"
   },
